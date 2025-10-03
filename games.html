@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Games - Game Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -14,9 +15,10 @@
             <ul>
                 <h1>Ryan Blestowe</h1>
                 <li><a href="index.html">Home</a></li>
+                <li><a href="web.html">Web Projects</a></li>
                 <li><a href="games.html" class="active">Games</a></li>
                 <li><a href="modeling.html">3D Modeling</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="about.html">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -25,9 +27,18 @@
         <section id="games">
             <h1>My Games</h1>
             <div class="portfolio-grid">
-            </div>
+                </div>
         </section>
     </main>
+
+    <div id="portfolio-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <img id="modal-img" src="" alt="Portfolio Image">
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

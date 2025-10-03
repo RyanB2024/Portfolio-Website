@@ -1,37 +1,97 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scrolling for navigation
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            if (this.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 
-    // Function to easily add a portfolio item to a specific grid
-    function addPortfolioItem(gridSelector, imageUrl, title, description) {
-        const grid = document.querySelector(gridSelector);
+    const portfolioItems = {
+        games: [{
+            imageUrl: 'path/to/your/game-image1.jpg',
+            title: 'My First Awesome Game',
+            description: 'A detailed description of the game. Talk about the genre, platforms, and your role in its development.'
+        }, {
+            imageUrl: 'path/to/your/game-image2.jpg',
+            title: 'My Second Awesome Game',
+            description: 'Another detailed description. What technologies did you use? What were the challenges?'
+        }, ],
+        modeling: [{
+            imageUrl: 'path/to/your/model-image1.jpg',
+            title: 'My First Cool 3D Model',
+            description: 'A detailed description of the model. What software did you use? What was the polycount?'
+        }, {
+            imageUrl: 'path/to/your/model-image2.jpg',
+            title: 'My Second Cool 3D Model',
+            description: 'Another detailed description. What was the inspiration for this model? How long did it take to create?'
+        }, ],
+        web: [{
+            imageUrl: 'path/to/your/model-image1.jpg',
+            title: 'test 3D Model',
+            description: 'A detailed description of the model. What software did you use? What was the polycount?'
+        }, {
+            imageUrl: 'path/to/your/model-image2.jpg',
+            title: 'My Second Cool 3D Model',
+            description: 'Another detailed description. What was the inspiration for this model? How long did it take to create?'
+        }, ],
+    };
+
+    function populatePortfolio(page) {
+        const grid = document.querySelector(`#${page} .portfolio-grid`);
         if (grid) {
-            const item = document.createElement('div');
-            item.classList.add('portfolio-item');
+            portfolioItems[page].forEach(item => {
+                const portfolioItem = document.createElement('div');
+                portfolioItem.classList.add('portfolio-item');
 
-            const image = document.createElement('img');
-            image.src = imageUrl;
-            item.appendChild(image);
+                const image = document.createElement('img');
+                image.src = item.imageUrl;
+                portfolioItem.appendChild(image);
 
-            const itemTitle = document.createElement('h3');
-            itemTitle.textContent = title;
-            item.appendChild(itemTitle);
+                const title = document.createElement('h3');
+                title.textContent = item.title;
+                portfolioItem.appendChild(title);
 
-            const itemDescription = document.createElement('p');
-            itemDescription.textContent = description;
-            item.appendChild(itemDescription);
-
-            grid.appendChild(item);
+                portfolioItem.addEventListener('click', () => openModal(item));
+                grid.appendChild(portfolioItem);
+            });
         }
     }
 
-    // --- ADD YOUR PORTFOLIO ITEMS HERE ---
+    // Modal functionality
+    const modal = document.getElementById('portfolio-modal');
+    const closeButton = document.querySelector('.close-button');
 
-    // Add items to the "Games" page
-    addPortfolioItem('#games .portfolio-grid', 'path/to/your/game-image1.jpg', 'My First Awesome Game', 'A short description of the game.');
-    addPortfolioItem('#games .portfolio-grid', 'path/to/your/game-image2.jpg', 'My Second Awesome Game', 'Another short description of another game.');
+    function openModal(item) {
+        if (modal) {
+            document.getElementById('modal-img').src = item.imageUrl;
+            document.getElementById('modal-title').textContent = item.title;
+            document.getElementById('modal-description').textContent = item.description;
+            modal.style.display = 'block';
+        }
+    }
 
+    if (closeButton) {
+        closeButton.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+    }
 
-    // Add items to the "3D Modeling" page
-    addPortfolioItem('#modeling .portfolio-grid', 'path/to/your/model-image1.jpg', 'My First Cool 3D Model', 'A short description of the model.');
-    addPortfolioItem('#modeling .portfolio-grid', 'path/to/your/model-image2.jpg', 'My Second Cool 3D Model', 'Another short description of another model.');
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 
+    // Populate portfolio based on the current page
+    if (document.querySelector('#games')) {
+        populatePortfolio('games');
+    }
+    if (document.querySelector('#modeling')) {
+        populatePortfolio('modeling');
+    }
 });
