@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'My First Cool 3D Model',
             description: 'A detailed description of the model. What software did you use? What was the polycount?'
         }, {
-            imageUrl: 'https://placehold.co/600x400/2a2a2a/f4f4f4?text=3D+Model+2',
+            imageUrl: 'path/to/your/image.jpg',
             title: 'My Second Cool 3D Model',
             description: 'Another detailed description. What was the inspiration for this model? How long did it take to create?'
         },],
