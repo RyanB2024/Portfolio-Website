@@ -22,16 +22,40 @@ document.addEventListener('DOMContentLoaded', () => {
             description: 'Another detailed description. What technologies did you use? What were the challenges?'
         },],
         modeling: [{
-            imageUrl: 'https://placehold.co/600x400/2a2a2a/f4f4f4?text=3D+Model+1',
-            title: 'My First Cool 3D Model',
+            imageUrl: 'asset/modeling/photos/dinner.png',
+            title: 'Dinner Night',
             description: 'A detailed description of the model. What software did you use? What was the polycount?'
         }, {
-            imageUrl: 'path/to/your/image.jpg',
-            title: 'My Second Cool 3D Model',
+            imageUrl: 'asset/modeling/photos/gull.png',
+            title: 'Gulls',
+            description: 'Another detailed description. What was the inspiration for this model? How long did it take to create?'
+        }, {
+            imageUrl: 'asset/modeling/photos/doll.png',
+            title: 'Artist Manikin',
+            description: 'Another detailed description. What was the inspiration for this model? How long did it take to create?'
+        }, {
+            imageUrl: 'asset/modeling/photos/chef.png',
+            title: 'Robotic Waiter',
+            description: 'Another detailed description. What was the inspiration for this model? How long did it take to create?'
+        }, {
+            imageUrl: 'asset/modeling/photos/dog.png',
+            title: 'Tank Dog',
+            description: 'Another detailed description. What was the inspiration for this model? How long did it take to create?'
+        }, {
+            imageUrl: 'asset/modeling/photos/poker.png',
+            title: 'Poker Night',
+            description: 'Another detailed description. What was the inspiration for this model? How long did it take to create?'
+        }, {
+            imageUrl: 'asset/modeling/photos/ufo.png',
+            title: 'Raygun Gothic',
+            description: 'Another detailed description. What was the inspiration for this model? How long did it take to create?'
+        }, {
+            imageUrl: 'asset/modeling/photos/Turtle-PEZ.png',
+            title: 'Turtle PEZ',
             description: 'Another detailed description. What was the inspiration for this model? How long did it take to create?'
         },],
         web: [{
-            imageUrl: '',
+            imageUrl: 'asset/website/pashto.png',
             title: 'Pashto Learning Website',
             description: 'A detailed description of the web project. What was the goal and what technologies were used?'
         }, {
