@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Smooth scrolling for navigation
     document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             if (this.getAttribute('href').startsWith('#')) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
@@ -13,32 +13,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const portfolioItems = {
         games: [{
-            imageUrl: 'path/to/your/game-image1.jpg',
+            imageUrl: 'https://placehold.co/600x400/2a2a2a/f4f4f4?text=Game+Project+1',
             title: 'My First Awesome Game',
             description: 'A detailed description of the game. Talk about the genre, platforms, and your role in its development.'
         }, {
-            imageUrl: 'path/to/your/game-image2.jpg',
+            imageUrl: 'https://placehold.co/600x400/2a2a2a/f4f4f4?text=Game+Project+2',
             title: 'My Second Awesome Game',
             description: 'Another detailed description. What technologies did you use? What were the challenges?'
-        }, ],
+        },],
         modeling: [{
-            imageUrl: 'path/to/your/model-image1.jpg',
+            imageUrl: 'https://placehold.co/600x400/2a2a2a/f4f4f4?text=3D+Model+1',
             title: 'My First Cool 3D Model',
             description: 'A detailed description of the model. What software did you use? What was the polycount?'
         }, {
-            imageUrl: 'path/to/your/model-image2.jpg',
+            imageUrl: 'https://placehold.co/600x400/2a2a2a/f4f4f4?text=3D+Model+2',
             title: 'My Second Cool 3D Model',
             description: 'Another detailed description. What was the inspiration for this model? How long did it take to create?'
-        }, ],
+        },],
         web: [{
-            imageUrl: 'path/to/your/model-image1.jpg',
-            title: 'test 3D Model',
-            description: 'A detailed description of the model. What software did you use? What was the polycount?'
+            imageUrl: '',
+            title: 'Pashto Learning Website',
+            description: 'A detailed description of the web project. What was the goal and what technologies were used?'
         }, {
-            imageUrl: 'path/to/your/model-image2.jpg',
-            title: 'My Second Cool 3D Model',
-            description: 'Another detailed description. What was the inspiration for this model? How long did it take to create?'
-        }, ],
+            imageUrl: 'https://placehold.co/600x400/2a2a2a/f4f4f4?text=Web+Project+2',
+            title: 'Second Web Project',
+            description: 'Another detailed description of a web project.'
+        },],
     };
 
     function populatePortfolio(page) {
@@ -93,5 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (document.querySelector('#modeling')) {
         populatePortfolio('modeling');
+    }
+    // FIXED: Added this block to populate the web projects page
+    if (document.querySelector('#web')) {
+        populatePortfolio('web');
     }
 });
